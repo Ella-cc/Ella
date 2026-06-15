@@ -1,27 +1,3 @@
-// 加载页面逻辑
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    const progressFill = document.getElementById('progress-fill');
-    const progressText = document.getElementById('progress-text');
-    
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.random() * 15;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            
-            // 加载完成后隐藏加载页面
-            setTimeout(() => {
-                loader.classList.add('hidden');
-            }, 500);
-        }
-        
-        progressFill.style.width = progress + '%';
-        progressText.textContent = Math.floor(progress) + '%';
-    }, 200);
-});
-
 // 平滑滚动效果
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
