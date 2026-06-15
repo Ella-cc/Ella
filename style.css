@@ -1,0 +1,584 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0a0a;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 加载页面样式 */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+    width: 400px;
+}
+
+.loader-text {
+    color: #f6ca4b;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f6ca4b, #ffed4e);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(246, 202, 75, 0.5);
+}
+
+.progress-text {
+    color: #f6ca4b;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(246, 202, 75, 0.5);
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f6ca4b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f6ca4b;
+}
+
+/* 首页英雄区域 */
+.hero {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    padding: 150px 0 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: 'Futura', 'Futura Bold', 'Montserrat', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-size: 6rem;
+    line-height: 0.7;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-title .hello {
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+    cursor: default;
+}
+
+.hero-title .hello:hover {
+    color: #f6ca4b;
+    transform: scaleX(1.15);
+}
+
+.hero-title .im {
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+    cursor: default;
+}
+
+.hero-title .im:hover {
+    color: #f6ca4b;
+    transform: scaleX(1.15);
+}
+
+.hero-title .name-liu {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 6rem;
+    display: block;
+    margin-bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+    cursor: default;
+}
+
+.hero-title .name-liu:hover {
+    color: #f6ca4b;
+    transform: scaleX(1.15);
+}
+
+.hero-title .name-xiangchi {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 6rem;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+    cursor: default;
+}
+
+.hero-title .name-xiangchi:hover {
+    color: #f6ca4b;
+    transform: scaleX(1.15);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+    text-align: left;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #f6ca4b, #ffed4e);
+    color: #0a0a0a;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(246, 202, 75, 0.3);
+}
+
+/* 关于我部分 */
+.about {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #f6ca4b;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 头像样式 */
+.about-avatar {
+    flex-shrink: 0;
+}
+
+.about-avatar img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f6ca4b;
+    box-shadow: 0 10px 30px rgba(246, 202, 75, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-avatar img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(246, 202, 75, 0.5);
+}
+
+/* 信息卡片样式 */
+.about-info-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 2rem;
+    width: fit-content;
+    min-width: 350px;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    color: #f6ca4b;
+    font-weight: 600;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.info-value {
+    color: #e0e0e0;
+}
+
+/* 描述文字 */
+.about-description {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+.about-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+/* 专业技能部分 */
+.skills {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #f6ca4b;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(246, 202, 75, 0.2);
+    border-color: #f6ca4b;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+    color: #f6ca4b;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-item p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 作品集部分 */
+.portfolio {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #f6ca4b;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    display: flex;
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 250px;
+}
+
+.portfolio-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.portfolio-card-link:hover .portfolio-card {
+    transform: translateY(-8px);
+    border-color: #f6ca4b;
+    box-shadow: 0 15px 40px rgba(246, 202, 75, 0.2);
+}
+
+.card-left {
+    flex: 0 0 65%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #0a0a0a;
+}
+
+.card-left h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.card-left .software {
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-right {
+    flex: 0 0 35%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-preview {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-preview::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(26, 26, 26, 0.8), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.preview-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    transition: transform 0.4s ease;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.4s ease;
+}
+
+.preview-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .preview-image {
+    transform: scale(1.05);
+}
+
+/* 联系方式部分 */
+.contact {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #f6ca4b;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* 页脚 */
+.footer {
+    background: #000;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-title .hello,
+    .hero-title .im,
+    .hero-title .name-liu,
+    .hero-title .name-xiangchi {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* 关于我部分响应式 */
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-avatar img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about-info-card {
+        width: 100%;
+    }
+    
+    .info-label {
+        min-width: 60px;
+    }
+    
+    .hero-decoration {
+        width: 250px;
+        height: 250px;
+        right: 5%;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影作品集 - 刘相池作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .project-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #f6ca4b;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: #f6ca4b;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .project-meta {
+            color: #b0b0b0;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta strong {
+            color: #f6ca4b;
+        }
+
+        .project-section {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f6ca4b;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(246, 202, 75, 0.3);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-caption {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">ELLA</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#skills">专业技能</a></li>
+                <li><a href="index.html#portfolio">作品集</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 作品详情 -->
+    <section class="project-detail">
+        <div class="project-header">
+            <a href="index.html#portfolio" class="back-link">← 返回作品集</a>
+            <h1 class="project-title">摄影作品集</h1>
+            <p class="project-meta"><strong>使用工具：</strong>富士X-S20 / Adobe Lightroom Classic</p>
+            <p class="project-meta"><strong>项目类型：</strong>摄影艺术 / 后期调色</p>
+        </div>
+
+        <!-- 作品展示 -->
+        <div class="project-section">
+            <h2 class="section-title">作品展示</h2>
+            <div class="photo-grid">
+                <div>
+                    <div class="photo-item">
+                        <img src="images/他.jpg" alt="他">
+                    </div>
+                    <p class="photo-caption">他</p>
+                </div>
+                <div>
+                    <div class="photo-item">
+                        <img src="images/叶.png" alt="叶">
+                    </div>
+                    <p class="photo-caption">叶</p>
+                </div>
+                <div>
+                    <div class="photo-item">
+                        <img src="images/小路.jpg" alt="小路">
+                    </div>
+                    <p class="photo-caption">小路</p>
+                </div>
+                <div>
+                    <div class="photo-item">
+                        <img src="images/湖岸.png" alt="湖岸">
+                    </div>
+                    <p class="photo-caption">湖岸</p>
+                </div>
+                <div>
+                    <div class="photo-item">
+                        <img src="images/阳光.jpg" alt="阳光">
+                    </div>
+                    <p class="photo-caption">阳光</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 刘相池. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
