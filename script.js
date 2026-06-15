@@ -12,6 +12,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// 图片懒加载功能
+const lazyImages = document.querySelectorAll('.lazy-load');
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy-load');
+            observer.unobserve(img);
+        }
+    });
+}, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+});
+
+lazyImages.forEach(img => imageObserver.observe(img));
+
+// 视频点击播放功能
+const videoPreviews = document.querySelectorAll('.video-preview');
+
+videoPreviews.forEach(preview => {
+    preview.addEventListener('click', function() {
+        const videoSrc = this.dataset.video;
+        
+        // 创建视频元素
+        const video = document.createElement('video');
+        video.src = videoSrc;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.className = 'preview-video';
+        
+        // 清空占位符并添加视频
+        this.innerHTML = '';
+        this.appendChild(video);
+        this.classList.remove('video-preview');
+    });
+});
+
 // 导航栏滚动效果
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');

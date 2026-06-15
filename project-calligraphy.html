@@ -88,6 +88,39 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .video-placeholder-detail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            transition: all 0.3s ease;
+        }
+
+        .video-item:hover .video-placeholder-detail {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+        }
+
+        .play-icon {
+            font-size: 4rem;
+            color: #f6ca4b;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover .play-icon {
+            transform: scale(1.2);
+        }
+
+        .click-hint {
+            color: #b0b0b0;
+            font-size: 1rem;
         }
 
         .video-caption {
@@ -166,20 +199,29 @@
             <h2 class="section-title">作品展示</h2>
             <div class="video-showcase">
                 <div>
-                    <div class="video-item">
-                        <video src="images/final1.mp4" autoplay muted loop controls></video>
+                    <div class="video-item" data-video="images/final1.mp4">
+                        <div class="video-placeholder-detail">
+                            <div class="play-icon">▶</div>
+                            <p class="click-hint">点击播放视频</p>
+                        </div>
                     </div>
                     <p class="video-caption">动态广告牌/建筑 16:9</p>
                 </div>
                 <div>
-                    <div class="video-item">
-                        <video src="images/final2.mp4" autoplay muted loop controls></video>
+                    <div class="video-item" data-video="images/final2.mp4">
+                        <div class="video-placeholder-detail">
+                            <div class="play-icon">▶</div>
+                            <p class="click-hint">点击播放视频</p>
+                        </div>
                     </div>
                     <p class="video-caption">社交媒体动画 1:1</p>
                 </div>
                 <div>
-                    <div class="video-item">
-                        <video src="images/final3.mp4" autoplay muted loop controls></video>
+                    <div class="video-item" data-video="images/final3.mp4">
+                        <div class="video-placeholder-detail">
+                            <div class="play-icon">▶</div>
+                            <p class="click-hint">点击播放视频</p>
+                        </div>
                     </div>
                     <p class="video-caption">动态海报 9:16</p>
                 </div>
@@ -195,5 +237,33 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // 详情页视频点击播放
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoItems = document.querySelectorAll('.video-item[data-video]');
+            
+            videoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const videoSrc = this.dataset.video;
+                    
+                    // 创建视频元素
+                    const video = document.createElement('video');
+                    video.src = videoSrc;
+                    video.autoplay = true;
+                    video.muted = false;
+                    video.loop = true;
+                    video.controls = true;
+                    video.style.width = '100%';
+                    video.style.height = 'auto';
+                    video.style.display = 'block';
+                    
+                    // 清空占位符并添加视频
+                    this.innerHTML = '';
+                    this.appendChild(video);
+                    this.removeAttribute('data-video');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
